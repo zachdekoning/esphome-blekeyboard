@@ -60,14 +60,9 @@ LIBS_DEFAULT: Final = [
 LIBS_ADDITIONAL: Final = [
     (
         "h2zero/NimBLE-Arduino",
-        "1.4.3",
+        "2.3.0",
         None,
-    ),
-    (
-        "t-vk/ESP32 BLE Keyboard",
-        "0.3.2",
-        None,
-    ),
+    )
 ]
 
 BUILD_FLAGS: Final = "-D USE_NIMBLE"

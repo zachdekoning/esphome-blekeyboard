@@ -24,6 +24,12 @@ void Esp32BleKeyboard::setup() {
 
   bleKeyboard.begin();
 
+  // Set security settings for bonding so iPad will properly reconnect on device reboot
+  NimBLEDevice::setSecurityAuth(true, true, true);
+  NimBLEDevice::setSecurityPasskey(123456);
+  NimBLEDevice::setSecurityIOCap(BLE_HS_IO_DISPLAY_ONLY);
+  NimBLEDevice::setSecurityInitKey(3);
+
   pServer = BLEDevice::getServer();
 
   ESP_LOGCONFIG(TAG, "advertiseOnDisconnect(%s)", this->reconnect_ ? "true" : "false");

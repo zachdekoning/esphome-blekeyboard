@@ -174,6 +174,13 @@ def adding_dependencies(use_default_libs: bool = True) -> None:
     for lib in LIBS_ADDITIONAL:  # type: ignore
         cg.add_library(*lib)
 
+    # Add updated ESP32 keyboard lib
+    cg.add_library(
+        name="ESP32 BLE Keyboard",
+        repository="https://github.com/zachdekoning/ESP32-BLE-Keyboard",
+        version=None,
+    )
+
     cg.add_build_flag(BUILD_FLAGS)
 
 
